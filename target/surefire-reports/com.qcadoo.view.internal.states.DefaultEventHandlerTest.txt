@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.qcadoo.view.internal.states.DefaultEventHandlerTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.qcadoo.view.internal.states.DefaultEventHandlerTest
