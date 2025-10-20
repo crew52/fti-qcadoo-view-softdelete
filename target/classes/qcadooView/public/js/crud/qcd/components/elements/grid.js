@@ -27,25 +27,25 @@ QCD.components.elements = QCD.components.elements || {};
 
 QCD.components.elements.Grid = function (element, mainController) {
     "use strict";
-
+    
     if (!(this instanceof QCD.components.elements.Grid)) {
         return new QCD.components.elements.Grid(element, mainController);
     }
-
+    
     $.extend(this, new QCD.components.Component(element, mainController));
 
     var options = this.options,
         headerController = null,
-
+        
         elementPath = this.elementPath,
         elementSearchName = this.elementSearchName,
 
         gridParameters = {
-            paging: true,
-            fullScreen: false,
-            shrinkToFit: false
+            paging : true,
+            fullScreen : false,
+            shrinkToFit : false
         },
-
+        
         grid = null,
         belongsToFieldName = null,
 
@@ -60,17 +60,17 @@ QCD.components.elements.Grid = function (element, mainController) {
         selectAllCheckBox = null,
 
         currentState = {
-            selectedEntityId: null,
-            selectedEntities: {},
-            filtersEnabled: true,
-            newButtonClickedBefore: false,
-            rowLinkClickedBefore: false,
-            addExistingButtonClickedBefore: false,
-            multiselectMode: true,
-            isEditable: true,
-            multiSearchEnabled: false,
-            userHiddenColumns: [],
-            deleteEnabled: false
+            selectedEntityId : null,
+            selectedEntities : {},
+            filtersEnabled : true,
+            newButtonClickedBefore : false,
+            rowLinkClickedBefore : false,
+            addExistingButtonClickedBefore : false,
+            multiselectMode : true,
+            isEditable : true,
+			multiSearchEnabled : false,
+			userHiddenColumns : [],
+			deleteEnabled : false
         },
 
         columnModel = {},
@@ -100,9 +100,9 @@ QCD.components.elements.Grid = function (element, mainController) {
             // translate enumerable value
             cellvalue = globalColumnTranslations[options.colModel.name][cellvalue];
         }
-        if (options.colModel.link) {
+       if (options.colModel.link) {
             // wrap cell value with link-like span element
-            if (rowObject.id) {
+            if(rowObject.id) {
                 var linkElem = $("<span />").addClass('gridLink').addClass(elementPath + '_link');
                 linkElem.attr('id', elementPath + "_" + options.colModel.name + "_" + rowObject.id);
                 linkElem.append(cellvalue);
@@ -110,11 +110,11 @@ QCD.components.elements.Grid = function (element, mainController) {
             }
         } else if (options.colModel.classesNames) {
             if (!options.colModel.classesCondition || Function('rowObject', '"use strict";return '
-                + options.colModel.classesCondition.replace(/&gt;/g, ">").replace(/&lt;/g, "<"))(rowObject)) {
+                    + options.colModel.classesCondition.replace(/&gt;/g,">").replace(/&lt;/g,"<"))(rowObject)) {
                 var elem = $("<span />");
                 var modelCls = options.colModel.classesNames;
-                if (modelCls.includes("rowObject['")) {
-                    modelCls = Function('rowObject', '"use strict";return ' + options.colModel.classesNames)(rowObject);
+                if(modelCls.includes("rowObject['")){
+                    modelCls = Function('rowObject', '"use strict";return '+ options.colModel.classesNames)(rowObject);
                 }
                 var classes = modelCls.split(" ");
                 for (var cls in classes) {
@@ -124,50 +124,50 @@ QCD.components.elements.Grid = function (element, mainController) {
                 elem.append(cellvalue);
                 cellvalue = elem.wrap('<div />').parent().html();
             }
-        } else if (options.colModel.formatterType && options.colModel.formatterType === "input") {
-            return '<input type="text" tabindex="' + rowObject.tabindex + '" style="text-align:' + options.colModel.align + ';" onchange="' + options.colModel.index + 'Change()" class="grid-input" id="' + options.colModel.index + '_' + rowObject.id + '" value="' + cellvalue + '"></input>';
+        } else if(options.colModel.formatterType && options.colModel.formatterType === "input") {
+           return '<input type="text" tabindex="'+rowObject.tabindex+'" style="text-align:'+options.colModel.align+';" onchange="'+ options.colModel.index+ 'Change()" class="grid-input" id="'+ options.colModel.index+ '_'+rowObject.id+'" value="' +cellvalue + '"></input>';
 
 
         }
-        return cellvalue;
+        return cellvalue; 
     }
 
     function parseOptions(options) {
         var colNames = [],
             colModel = [],
             hasFilterableColumns = false,
-            hasMultiSearchColumns = false,
-            multiSearchColumns = [],
-            i = null;
-
-        var selectOperators = [
-            { op: "eq", text: options.translations.operator_eq },
-            { op: "ne", text: options.translations.operator_ne }
-        ];
-
-        gridParameters.defaultOperators = [
-            { op: "cn", text: options.translations.operator_cn },
-            { op: "bw", text: options.translations.operator_bw },
-            { op: "ew", text: options.translations.operator_ew },
-            { op: "eq", text: options.translations.operator_eq },
-            { op: "ne", text: options.translations.operator_ne },
-            { op: "gt", text: options.translations.operator_gt },
-            { op: "ge", text: options.translations.operator_ge },
-            { op: "lt", text: options.translations.operator_lt },
-            { op: "le", text: options.translations.operator_le },
-            { op: "in", text: options.translations.operator_in },
-            { op: "isnull", text: options.translations.operator_isnull },
-            { op: "cin", text: options.translations.operator_cin }
-        ];
-
+			hasMultiSearchColumns = false,
+			multiSearchColumns=[],
+            i = null;	
+			
+		var selectOperators = [
+				{ op: "eq", text: options.translations.operator_eq },
+				{ op: "ne", text: options.translations.operator_ne }
+			];
+		
+		gridParameters.defaultOperators = [
+				{ op: "cn", text: options.translations.operator_cn },
+				{ op: "bw", text: options.translations.operator_bw },
+				{ op: "ew", text: options.translations.operator_ew },
+				{ op: "eq", text: options.translations.operator_eq },
+				{ op: "ne", text: options.translations.operator_ne },
+				{ op: "gt", text: options.translations.operator_gt },
+				{ op: "ge", text: options.translations.operator_ge },
+				{ op: "lt", text: options.translations.operator_lt },
+				{ op: "le", text: options.translations.operator_le },
+				{ op: "in", text: options.translations.operator_in },
+				{ op: "isnull", text: options.translations.operator_isnull },
+				{ op: "cin", text: options.translations.operator_cin }
+		];
+			
         for (i in options.columns) {
             var column = options.columns[i],
                 isSortable = false,
                 isSerchable = false,
-                multiSearchColumn = null;
+				multiSearchColumn = null;
 
             columnModel[column.name] = column;
-
+            
             for (var sortColIter in options.orderableColumns) {
                 if (options.orderableColumns[sortColIter] === column.name) {
                     isSortable = true;
@@ -181,16 +181,16 @@ QCD.components.elements.Grid = function (element, mainController) {
                     break;
                 }
             }
-
-            for (var multiSearchColIter in options.multiSearchColumns) {
-                if (options.multiSearchColumns[multiSearchColIter] === column.name) {
-                    hasMultiSearchColumns = true;
-                    multiSearchColumn = {
-                        text: column.label,
-                        itemval: column.name
-                    };
-                }
-            }
+			
+			for (var multiSearchColIter in options.multiSearchColumns){
+				if (options.multiSearchColumns[multiSearchColIter] === column.name){
+					hasMultiSearchColumns = true;
+					multiSearchColumn = {
+							text : column.label,
+							itemval : column.name
+						};
+				}
+			}
 
             column.isSerchable = isSerchable;
 
@@ -206,24 +206,24 @@ QCD.components.elements.Grid = function (element, mainController) {
                     possibleValues = {};
 
                 if (column.filterValues) {
-
-                    if (multiSearchColumn) {
-                        var multiSearchFilterValues = [];
-                        var iter = null;
-                        for (iter in column.filterValues) {
-                            var multiSearchFilterValue = {
-                                text: column.filterValues[iter].value,
-                                value: column.filterValues[iter].key
-                            };
-                            multiSearchFilterValues.push(multiSearchFilterValue);
-                        }
-                        multiSearchColumn.dataValues = multiSearchFilterValues;
-                        multiSearchColumn.ops = selectOperators;
-                    }
+					
+					if(multiSearchColumn){
+					    var multiSearchFilterValues = [];
+					    var iter = null;
+					    for (iter in column.filterValues) {
+					        var multiSearchFilterValue = {
+					            text: column.filterValues[iter].value,
+					            value: column.filterValues[iter].key
+					        };
+					        multiSearchFilterValues.push(multiSearchFilterValue);   
+					    }
+					    multiSearchColumn.dataValues = multiSearchFilterValues;
+						multiSearchColumn.ops = selectOperators;
+				    }
                     possibleValues[""] = "";
                     var possibleValuesString = ":",
                         j = null;
-
+                        
                     for (j in column.filterValues) {
                         possibleValues[column.filterValues[j].key] = column.filterValues[j].value;
                         possibleValuesString += ";" + column.filterValues[j].key + ":" + column.filterValues[j].value;
@@ -234,18 +234,18 @@ QCD.components.elements.Grid = function (element, mainController) {
                 }
 
                 var col = {
-                    name: column.name,
-                    index: column.name,
-                    width: column.width,
-                    sortable: isSortable,
-                    resizable: true,
-                    align: column.align,
+                    name : column.name,
+                    index : column.name,
+                    width : column.width,
+                    sortable : isSortable,
+                    resizable : true,
+                    align : column.align,
                     classesNames: column.classesNames,
                     classesCondition: column.classesCondition,
                     formatterType: column.formatter,
-                    stype: stype,
-                    searchoptions: searchoptions,
-                    link: column.link
+                    stype : stype,
+                    searchoptions : searchoptions,
+                    link : column.link
                 };
 
                 globalColumnTranslations[column.name] = possibleValues;
@@ -257,29 +257,29 @@ QCD.components.elements.Grid = function (element, mainController) {
                 colModel.push(col);
             } else {
                 var col = {
-                    name: column.name,
-                    index: column.name,
-                    width: column.width,
-                    sortable: isSortable,
-                    resizable: true,
-                    hidden: true,
-                    align: column.align,
+                    name : column.name,
+                    index : column.name,
+                    width : column.width,
+                    sortable : isSortable,
+                    resizable : true,
+                    hidden : true,
+                    align : column.align,
                     classesNames: column.classesNames,
                     classesCondition: column.classesCondition,
                     formatterType: column.formatter,
-                    stype: stype,
-                    searchoptions: searchoptions,
-                    link: column.link
+                    stype : stype,
+                    searchoptions : searchoptions,
+                    link : column.link
                 };
                 colModel.push(col);
                 colNames.push(column.name);
 
                 hiddenColumnValues[column.name] = {};
             }
-            if (multiSearchColumn != null) {
-                multiSearchColumns.push(multiSearchColumn);
-                multiSearchColumn = null;
-            }
+			if (multiSearchColumn != null) {
+				multiSearchColumns.push(multiSearchColumn);
+				multiSearchColumn = null;
+			}
         }
 
         gridParameters.defaultVisibleColumns = options.defaultVisibleColumns;
@@ -287,8 +287,8 @@ QCD.components.elements.Grid = function (element, mainController) {
         restoreSavedColumns(colModel);
 
         gridParameters.hasMultiSearchColumns = hasMultiSearchColumns;
-        gridParameters.multiSearchColumns = multiSearchColumns;
-        gridParameters.hasFilterableColumns = hasFilterableColumns;
+		gridParameters.multiSearchColumns = multiSearchColumns;
+		gridParameters.hasFilterableColumns = hasFilterableColumns;
         gridParameters.filtersDefaultEnabled = options.filtersDefaultVisible && hasFilterableColumns;
         gridParameters.hasPredefinedFilters = options.hasPredefinedFilters;
         gridParameters.predefinedFilters = options.predefinedFilters;
@@ -349,7 +349,7 @@ QCD.components.elements.Grid = function (element, mainController) {
             selectedArray = [],
             selectedEntitiesArray = [],
             i = null;
-
+            
         for (i in currentState.selectedEntities) {
             if (typeof i === "undefined") {
                 currentState.selectedEntities = false;
@@ -364,19 +364,19 @@ QCD.components.elements.Grid = function (element, mainController) {
         }
 
         switch (selectionCounter) {
-            case 0:
-                currentState.selectedEntities = {};
-                currentState.multiselectMode = false;
-                currentState.selectedEntityId = null;
-                break;
-            case 1:
-                currentState.multiselectMode = false;
-                currentState.selectedEntityId = lastSelectedRow;
-                break;
-            default:
-                currentState.multiselectMode = true;
-                currentState.selectedEntityId = null;
-                break;
+        case 0:
+            currentState.selectedEntities = {};
+            currentState.multiselectMode = false;
+            currentState.selectedEntityId = null;
+            break;
+        case 1:
+            currentState.multiselectMode = false;
+            currentState.selectedEntityId = lastSelectedRow;
+            break;
+        default:
+            currentState.multiselectMode = true;
+            currentState.selectedEntityId = null;
+            break;
         }
 
         // UPDATE SELECTION COLOR
@@ -427,11 +427,11 @@ QCD.components.elements.Grid = function (element, mainController) {
         // FIRE ON CHANGE LISTENERS
         fireOnChangeListeners("onChange", [selectedEntitiesArray]);
     }
-
+    
     this.setLinkListener = function (listener) {
         linkListener = listener;
     };
-
+    
     function setPermanentlyDisableParam(params) {
         if (!componentEnabled) {
             params["window.permanentlyDisabled"] = true;
@@ -458,18 +458,18 @@ QCD.components.elements.Grid = function (element, mainController) {
         currentState.rowLinkClickedBefore = true;
         if (linkListener) {
             linkListener.onGridLinkClicked(selectedEntities);
-        } else if (colName && columnModel[colName].attachment && mainController.canClose()) {
-            var url = "/attachmentViewer.html?attachment=" + Base64.encodeURI(JSON.stringify(currentEntities[selectedEntities].fields[columnModel[colName].correspondingField]));
+        } else if(colName && columnModel[colName].attachment && mainController.canClose()) {
+            var url =  "/attachmentViewer.html?attachment=" +  Base64.encodeURI(JSON.stringify(currentEntities[selectedEntities].fields[columnModel[colName].correspondingField]));
             window.open(url, '_blank');
-        } else if (colName && columnModel[colName].correspondingView && mainController.canClose()) {
+        } else if(colName && columnModel[colName].correspondingView && mainController.canClose()) {
             var params = {};
-            params["form.id"] = currentEntities[selectedEntities].fields[columnModel[colName].correspondingField].replace(/\s/g, '').replace(/,/g, '');
+            params["form.id"] = currentEntities[selectedEntities].fields[columnModel[colName].correspondingField].replace(/\s/g, '').replace(/,/g , '');
             setPermanentlyDisableParam(params);
             var url = columnModel[colName].correspondingView + ".html?context=" + JSON.stringify(params);
             mainController.goToPage(url);
-        } else if (colName && columnModel[colName].correspondingViewField && mainController.canClose()) {
+        } else if(colName && columnModel[colName].correspondingViewField && mainController.canClose()) {
             var params = {};
-            params["form.id"] = currentEntities[selectedEntities].fields[columnModel[colName].correspondingField].replace(/\s/g, '').replace(/,/g, '');
+            params["form.id"] = currentEntities[selectedEntities].fields[columnModel[colName].correspondingField].replace(/\s/g, '').replace(/,/g , '');
             setPermanentlyDisableParam(params);
             var url = currentEntities[selectedEntities].fields[columnModel[colName].correspondingViewField] + ".html?context=" + JSON.stringify(params);
             mainController.goToPage(url);
@@ -479,7 +479,7 @@ QCD.components.elements.Grid = function (element, mainController) {
             redirectToCorrespondingPage(params);
         }
     }
-
+    
     function onModalRender(modalWindow) {
         modalWindow.getComponent("window.grid").setLinkListener(that);
     }
@@ -493,13 +493,13 @@ QCD.components.elements.Grid = function (element, mainController) {
             var correspondingLookupComponent = mainController.getComponentByReferenceName(gridParameters.correspondingLookup),
                 lookupComponentData = correspondingLookupComponent.getComponentData(),
                 url = "";
-
-            if (lookupComponentData.criteriaModifierParameter) {
-                params["window.grid.options"] = {
-                    criteriaModifierParameter: lookupComponentData.criteriaModifierParameter
-                };
-            }
-
+                
+			if (lookupComponentData.criteriaModifierParameter) {
+				params["window.grid.options"] = {
+					criteriaModifierParameter: lookupComponentData.criteriaModifierParameter
+				};
+			}
+            
             url = pluginIdentifier + "/" + correspondingLookupComponent.options.viewName + ".html?context=" + JSON.stringify(params);
             mainController.openModal(elementPath + "_editWindow", url, false, onModalClose, onModalRender);
         }
@@ -508,7 +508,7 @@ QCD.components.elements.Grid = function (element, mainController) {
     this.getComponentValue = function () {
         return currentState;
     };
-
+    
     function getColumnFilterElement(name) {
         return that.element.find("#gs_" + name);
     }
@@ -547,12 +547,12 @@ QCD.components.elements.Grid = function (element, mainController) {
             }
             grid.setGridHeight(currentGridHeight);
         }
-        if (currentState.multiSearchEnabled !== state.multiSearchEnabled) {
-            currentState.multiSearchEnabled = state.multiSearchEnabled;
-        }
-
-        setSortColumnAndDirection(state.order);
-
+		if(currentState.multiSearchEnabled !== state.multiSearchEnabled){
+			currentState.multiSearchEnabled = state.multiSearchEnabled;
+		}
+        
+		setSortColumnAndDirection(state.order);
+        
         if (state.filters) {
             currentState.filters = state.filters;
             for (var filterIndex in currentState.filters) {
@@ -561,10 +561,10 @@ QCD.components.elements.Grid = function (element, mainController) {
             findMatchingPredefiniedFilter();
             onFiltersStateChange();
         }
-        if (state.multiSearchFilter) {
-            currentState.multiSearchFilter = state.multiSearchFilter;
-            headerController.initializeMultiSearchFilter(state.multiSearchFilter);
-        }
+		if(state.multiSearchFilter){
+			currentState.multiSearchFilter = state.multiSearchFilter;
+			headerController.initializeMultiSearchFilter(state.multiSearchFilter);
+		}
         if (state.newButtonClickedBefore || state.addExistingButtonClickedBefore) {
             var lastPageController = mainController.getLastPageController();
             if (lastPageController && lastPageController.getViewName() == gridParameters.correspondingViewName) {
@@ -573,33 +573,33 @@ QCD.components.elements.Grid = function (element, mainController) {
             }
         }
     };
-
+    
     function setSortColumnAndDirection(order) {
         for (var col in columnModel) {
             var column = columnModel[col];
-            $("#" + gridParameters.modifiedPath + "_grid_" + column.name).removeClass("sortColumn");
-            $("#" + elementSearchName + "_sortArrow_" + column.name).removeClass("downArrow");
-        }
-        currentState.order = [];
-        if (order) {
-            $.each(order, function (i, orderItem) {
-                currentState.order.push({
-                    column: orderItem.column,
-                    direction: orderItem.direction
-                });
-                $("#" + gridParameters.modifiedPath + "_grid_" + orderItem.column).addClass("sortColumn");
-                if (orderItem.direction === "asc") {
-                    $("#" + elementSearchName + "_sortArrow_" + orderItem.column).addClass("upArrow");
-                } else if (orderItem.direction === "desc") {
-                    $("#" + elementSearchName + "_sortArrow_" + orderItem.column).addClass("downArrow");
-                }
-            });
+    		$("#" + gridParameters.modifiedPath + "_grid_" + column.name).removeClass("sortColumn");
+    		$("#" + elementSearchName + "_sortArrow_" + column.name).removeClass("downArrow");
+    	}
+    	currentState.order = [];
+    	if(order){
+	    	$.each(order, function (i, orderItem){
+	    		currentState.order.push({
+	    			column : orderItem.column,
+	    			direction : orderItem.direction
+	    		});
+	    		$("#" + gridParameters.modifiedPath + "_grid_" + orderItem.column).addClass("sortColumn");
+	    		if(orderItem.direction === "asc"){
+	    			$("#" + elementSearchName + "_sortArrow_" + orderItem.column).addClass("upArrow");
+	    		} else if(orderItem.direction === "desc"){
+    				$("#" + elementSearchName + "_sortArrow_" + orderItem.column).addClass("downArrow");
+    			}
+	    	});
 
             $(window).resize();
-        }
+    	}
 
     }
-
+    
     function findMatchingPredefiniedFilter() {
         var filterToSearch = {},
             isIdentical = true;
@@ -611,17 +611,17 @@ QCD.components.elements.Grid = function (element, mainController) {
             isIdentical = true;
 
             if (gridParameters.predefinedFilters[i].orderColumn) {
-                isIdentical = false;
-                $.each(currentState.order, function (j, currentStateOrderItem) {
-                    if (currentStateOrderItem.column === gridParameters.predefinedFilters[i].orderColumn &&
-                        currentStateOrderItem.direction === gridParameters.predefinedFilters[i].orderDirection) {
-                        isIdentical = true;
-                        return;
-                    }
-                });
-                if (!isIdentical) {
-                    continue;
-                }
+            	isIdentical = false;
+            	$.each(currentState.order, function (j, currentStateOrderItem){
+	                if (currentStateOrderItem.column === gridParameters.predefinedFilters[i].orderColumn && 
+	                		currentStateOrderItem.direction === gridParameters.predefinedFilters[i].orderDirection) {
+	                    isIdentical = true;
+	                    return;
+	                }
+            	});
+            	if (!isIdentical) {
+            		continue;
+            	}
             }
 
             for (var col in columnModel) {
@@ -640,12 +640,12 @@ QCD.components.elements.Grid = function (element, mainController) {
         if (!isIdentical && !jQuery.isEmptyObject(filterToSearch)) {
             headerController.setPredefinedFilter(null);
         } else {
-            if (!isIdentical) {
+            if(!isIdentical){
                 headerController.setPredefinedFilter(0);
             }
         }
     }
-
+    
     function onFiltersStateChange() {
         var hasFiltersValues = false,
             i = null;
@@ -661,9 +661,9 @@ QCD.components.elements.Grid = function (element, mainController) {
             headerController.setFiltersValuesEmpty();
         }
     }
-
+    
     this.setComponentValue = function (value) {
-        if (value.headerValue) {
+        if(value.headerValue){
             mainController.setWindowHeader(value.headerValue);
         }
         currentState.rowLinkClickedBefore = false;
@@ -698,7 +698,7 @@ QCD.components.elements.Grid = function (element, mainController) {
             var entity = value.entities[entityNo];
             currentEntities[entity.id] = entity;
             var fields = {
-                id: entity.id
+                id : entity.id
             };
             for (var fieldName in columnModel) {
                 if (hiddenColumnValues[fieldName]) {
@@ -758,7 +758,7 @@ QCD.components.elements.Grid = function (element, mainController) {
         aferSelectionUpdate();
 
         setSortColumnAndDirection(value.order);
-
+        
         if (value.filters) {
             currentState.filters = value.filters;
             for (var filterIndex in currentState.filters) {
@@ -806,7 +806,7 @@ QCD.components.elements.Grid = function (element, mainController) {
 
 
         headerController.setDeleteEnabled(currentState.deleteEnabled);
-        if (gridParameters.footerrow) {
+        if(gridParameters.footerrow){
             addSummaryDataForNumberRows();
             addSummaryDataForNumberTimeRows();
         }
@@ -835,42 +835,42 @@ QCD.components.elements.Grid = function (element, mainController) {
             for (var i = 0; i < rows.length; ++i) {
                 var row = rows[i];
                 var val = grid.jqGrid('getCell', row, c);
-                if (val === false) {
+                if(val === false){
                     totalSum = false;
                     break;
                 } else if (val.indexOf("gridLink") > 0) {
                     val = $(val).text();
                 }
-                if (locale === "pl_PL" || locale === "pl") {
-                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(',', '.'))) || 0;
-                } else if (locale === "de") {
-                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\./g, '').replace(',', '.'))) || 0;
+                if(locale === "pl_PL" || locale === "pl"){
+                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(',','.'))) || 0;
+                } else if(locale === "de"){
+                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\./g,'').replace(',','.'))) || 0;
                 } else {
-                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\,/g, ''))) || 0;
+                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\,/g,''))) || 0;
                 }
             }
-            if (totalSum !== false) {
+            if (totalSum!==false) {
                 var total = nanToZero(parseFloat(totalSum.toFixed(5)));
                 var obj;
                 if (locale === "pl_PL" || locale === "pl") {
-                    obj = '[{"' + c + '": "' + numberWithSpaces(total.toString().replace('.', ',')) + '"}]';
+                    obj = '[{"' + c + '": "' + numberWithSpaces(total.toString().replace('.',',')) + '"}]';
                 } else if (locale === "de") {
-                    obj = '[{"' + c + '": "' + numberWithDot(total.toString().replace('.', ',')) + '"}]';
+                    obj = '[{"' + c + '": "' + numberWithDot(total.toString().replace('.',',')) + '"}]';
                 } else {
-                    obj = '[{"' + c + '": "' + numberWithComa(total.toString().replace('.', ',')) + '"}]';
+                    obj = '[{"' + c + '": "' + numberWithComa(total.toString().replace('.',',')) + '"}]';
                 }
                 var colFoot = JSON.parse(obj);
                 grid.jqGrid('footerData', 'set', colFoot[0]);
             }
         }
 
-        var selectedIds = grid.jqGrid('getGridParam', 'selarrrow');
+        var selectedIds = grid.jqGrid('getGridParam','selarrrow');
 
         var $newFooterRow = $('#' + elementSearchName + ' .ui-jqgrid-ftable').find('tbody').find('tr').last();
         for (var n = 0; n < columnsToSummary.length; ++n) {
             var c = columnsToSummary[n];
-            var totalSum = 0;
-            for (var i = 0; i < selectedIds.length; ++i) {
+             var totalSum = 0;
+             for (var i = 0; i < selectedIds.length; ++i) {
                 var row = selectedIds[i];
                 var val = grid.jqGrid('getCell', row, c);
                 if (val === false) {
@@ -880,29 +880,29 @@ QCD.components.elements.Grid = function (element, mainController) {
                     val = $(val).text();
                 }
                 if (locale === "pl_PL" || locale === "pl") {
-                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(',', '.'))) || 0;
+                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(',','.'))) || 0;
                 } else if (locale === "de") {
-                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\./g, '').replace(',', '.'))) || 0;
+                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\./g,'').replace(',','.'))) || 0;
                 } else {
-                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\,/g, ''))) || 0;
+                    totalSum += parseFloat(nanToZero(val.split('&nbsp;').join('').replace(/\,/g,''))) || 0;
                 }
-            }
-            if (totalSum !== false) {
+             }
+            if(totalSum!==false){
                 var total = nanToZero(parseFloat(totalSum.toFixed(5)));
                 var obj;
                 if (locale === "pl_PL" || locale === "pl") {
-                    obj = numberWithSpaces(total.toString().replace('.', ','));
+                    obj = numberWithSpaces(total.toString().replace('.',','));
                 } else if (locale === "de") {
-                    obj = numberWithDot(total.toString().replace('.', ','));
+                    obj = numberWithDot(total.toString().replace('.',','));
                 } else {
-                    obj = numberWithComa(total.toString().replace('.', ','));
+                    obj = numberWithComa(total.toString().replace('.',','));
                 }
-                $newFooterRow.find(">td[aria-describedby=" + gridParameters.element + "_" + c + "]").text(obj);
+                $newFooterRow.find(">td[aria-describedby=" + gridParameters.element + "_"+c+"]").text(obj);
             }
         }
 
-        $newFooterRow.find('td').first().text(translations.summarySelectedRow).css({ 'overflow': 'inherit', 'border-right': 'none' });
-        $footerRow.find('td').first().text(translations.summaryRow).css({ 'overflow': 'inherit', 'border-right': 'none' });
+        $newFooterRow.find('td').first().text(translations.summarySelectedRow).css({'overflow':'inherit', 'border-right':'none'});
+        $footerRow.find('td').first().text(translations.summaryRow).css({'overflow':'inherit', 'border-right':'none'});
     }
 
     function numberWithSpaces(x) {
@@ -924,7 +924,7 @@ QCD.components.elements.Grid = function (element, mainController) {
     }
 
     function addSummaryDataForNumberTimeRows() {
-        if (isEmpty(gridParameters.columnsToSummaryTime)) {
+        if(isEmpty(gridParameters.columnsToSummaryTime)){
             return;
         }
 
@@ -941,7 +941,7 @@ QCD.components.elements.Grid = function (element, mainController) {
             for (var i = 0; i < rows.length; ++i) {
                 var row = rows[i];
                 var val = grid.jqGrid('getCell', row, c)
-                if (val === false) {
+                if(val === false){
                     totalSum = false;
                     break;
                 } else if (val.indexOf("gridLink") > 0) {
@@ -957,36 +957,36 @@ QCD.components.elements.Grid = function (element, mainController) {
             grid.jqGrid('footerData', 'set', colFoot[0]);
         }
 
-        var selectedIds = grid.jqGrid('getGridParam', 'selarrrow');
+        var selectedIds = grid.jqGrid('getGridParam','selarrrow');
         var $newFooterRow = $('#' + elementSearchName + ' .ui-jqgrid-ftable').find('tbody').find('tr').last();
 
         for (var n = 0; n < columnsToSummary.length; ++n) {
-            var c = columnsToSummary[n];
-            var totalSum = 0;
+             var c = columnsToSummary[n];
+             var totalSum = 0;
 
-            for (var i = 0; i < selectedIds.length; ++i) {
-                var row = selectedIds[i];
-                var val = grid.jqGrid('getCell', row, c);
-                if (val === false) {
+             for (var i = 0; i < selectedIds.length; ++i) {
+                  var row = selectedIds[i];
+                  var val = grid.jqGrid('getCell', row, c);
+                  if(val === false){
                     totalSum = false;
                     break;
-                } else if (val.indexOf("gridLink") > 0) {
+                  } else if (val.indexOf("gridLink") > 0) {
                     val = $(val).text();
-                }
-                totalSum += toSeconds(val);
-            }
+                  }
+                  totalSum += toSeconds(val);
+             }
 
             var total = nanToZero(totalSum);
             var obj = secondsToTime(total);
-            $newFooterRow.find(">td[aria-describedby=" + gridParameters.element + "_" + c + "]").text(obj);
+            $newFooterRow.find(">td[aria-describedby=" + gridParameters.element + "_"+c+"]").text(obj);
         }
 
-        $newFooterRow.find('td').first().text(translations.summarySelectedRow).css({ 'overflow': 'inherit', 'border-right': 'none' });
-        $footerRow.find('td').first().text(translations.summaryRow).css({ 'overflow': 'inherit', 'border-right': 'none' });
+        $newFooterRow.find('td').first().text(translations.summarySelectedRow).css({'overflow':'inherit', 'border-right':'none'});
+        $footerRow.find('td').first().text(translations.summaryRow).css({'overflow':'inherit', 'border-right':'none'});
     }
 
     function toSeconds(time) {
-        if (isEmpty(time)) {
+        if (isEmpty(time)){
             return 0;
         }
 
@@ -1042,7 +1042,7 @@ QCD.components.elements.Grid = function (element, mainController) {
 
     this.setComponentEnabled = function (isEnabled) {
         componentEnabled = isEnabled;
-        if (selectAllCheckBox) {
+        if(selectAllCheckBox){
             if (componentEnabled || gridParameters.selectableWhenDisabled) {
                 selectAllCheckBox.attr("disabled", false);
             } else {
@@ -1089,30 +1089,30 @@ QCD.components.elements.Grid = function (element, mainController) {
             unblockGrid();
         });
     }
-
+    
     function onSortColumnChange(index, iCol, sortorder) {
         blockGrid();
         var orderIndex = -1;
-        $.each(currentState.order, function (i, currentStateOrderItem) {
-            if (currentStateOrderItem.column === index) {
-                orderIndex = i;
-                return;
-            }
-        });
-        if (orderIndex === -1) {
-            currentState.order.push({
-                column: index,
-                direction: "asc"
-            });
-        } else {
-            if (currentState.order[orderIndex].direction === "asc") {
-                currentState.order[orderIndex].direction = "desc";
-            } else {
-                currentState.order.splice(orderIndex, 1);
-            }
-        }
+        $.each(currentState.order, function (i, currentStateOrderItem){
+    		if(currentStateOrderItem.column === index){
+    			orderIndex = i;
+    			return;
+    		}
+    	});
+    	if(orderIndex === -1){
+    		currentState.order.push({
+    			column: index,
+    			direction: "asc"
+    		});
+    	} else {
+    		if (currentState.order[orderIndex].direction === "asc") {
+    			currentState.order[orderIndex].direction = "desc";
+    		} else {
+    			currentState.order.splice(orderIndex, 1);
+    		}
+    	}
 
-        if (!jQuery.isEmptyObject(currentState.order)) {
+    	if(!jQuery.isEmptyObject(currentState.order)) {
             updateSavedOptions("sorters", currentState.order);
         }
         onCurrentStateChange();
@@ -1163,14 +1163,14 @@ QCD.components.elements.Grid = function (element, mainController) {
             currentState.filters = null;
         }
     }
-
+    
     function performFilter() {
         blockGrid();
         applyFilters();
         onCurrentStateChange();
         onFiltersStateChange();
     }
-
+    
     function onFilterChange() {
         performFilter();
     }
@@ -1185,11 +1185,11 @@ QCD.components.elements.Grid = function (element, mainController) {
             if (!isEnterKeyPressed(e)) {
                 return;
             }
-
+    
             var val = columnFilterElement.val(),
                 columnName = columnFilterElement.attr("id").substring(3),
                 currentFilter = "";
-
+                
             if (currentState.filters && currentState.filters[columnName]) {
                 currentFilter = currentState.filters[columnName];
             }
@@ -1261,18 +1261,18 @@ QCD.components.elements.Grid = function (element, mainController) {
         for (var i in grid[0].p.colModel) {
             var column = grid[0].p.colModel[i];
             if (!column.hidden && !column.hidedlg) {
-                columns.push({ name: column.name, width: column.width });
+                columns.push({name: column.name, width: column.width});
             }
         }
 
         updateSavedOptions("columns", columns);
         updateUserHiddenColumns();
-        if (gridParameters.footerrow) {
+         if(gridParameters.footerrow){
             $('#' + elementSearchName + ' .ui-jqgrid-ftable').find('tr').last().remove();
             $('#' + elementSearchName + ' .ui-jqgrid-ftable').find('tbody').append($('#' + elementSearchName + ' .ui-jqgrid-ftable').find('tr').clone(true));
             addSummaryDataForNumberRows();
             addSummaryDataForNumberTimeRows();
-        }
+         }
     }
 
     this.onColumnChooserClicked = function () {
@@ -1288,7 +1288,7 @@ QCD.components.elements.Grid = function (element, mainController) {
             },
             afterShowForm: function () {
                 for (var key in hiddenColumnValues) {
-                    $("#col_" + key).closest("tr").css({ "display": "none" })
+                    $("#col_"+key).closest("tr").css({"display": "none"})
                 }
             }
 
@@ -1351,7 +1351,7 @@ QCD.components.elements.Grid = function (element, mainController) {
             column = columnModel[i];
             getColumnFilterElement(column.name).val("");
         }
-
+        
         for (col in filterObject) {
             filterObject[col] = Encoder.htmlDecode(filterObject[col]);
             getColumnFilterElement(col).val(filterObject[col]);
@@ -1382,28 +1382,28 @@ QCD.components.elements.Grid = function (element, mainController) {
         }
 
         setSortColumnAndDirection(filter.orderColumn ? [{
-            column: filter.orderColumn,
-            direction: filter.orderDirection
+            column : filter.orderColumn,
+            direction : filter.orderDirection
         }] : []);
 
         updateSearchFields();
         onFiltersStateChange();
         onCurrentStateChange(true);
     };
-
-    this.onMultiSearchClicked = function (data) {
+	
+	this.onMultiSearchClicked = function(data){
         blockGrid();
-        currentState.multiSearchEnabled = true;
-        currentState.multiSearchFilter = data;
+		currentState.multiSearchEnabled = true;
+		currentState.multiSearchFilter = data;
         onCurrentStateChange();
-    }
-
-    this.onMultiSearchReset = function (data) {
+	}
+	
+	this.onMultiSearchReset = function(data){
         blockGrid();
-        currentState.multiSearchEnabled = false;
-        currentState.multiSearchFilter = null;
+		currentState.multiSearchEnabled = false;
+		currentState.multiSearchFilter = null;
         onCurrentStateChange();
-    }
+	}
 
     this.onNewButtonClicked = function () {
         that.performNew();
@@ -1416,7 +1416,7 @@ QCD.components.elements.Grid = function (element, mainController) {
     this.onDeleteButtonClicked = function () {
         that.performDelete();
     };
-
+    // SOFT DELETE
     this.onSoftDeleteButtonClicked = function () {
         that.performSoftDelete();
     };
@@ -1459,7 +1459,7 @@ QCD.components.elements.Grid = function (element, mainController) {
             var windowHeight = $(window).height(),
                 ribbonHeight = $(".windowContainer .windowContainerRibbon").height() || 70,
                 containerHeight = Math.round(windowHeight - 2 * getMargin(width) - ribbonHeight);
-
+                
             height = containerHeight;
             if ($("#window_windowHeader").length > 0) {
                 height -= 35;
@@ -1478,7 +1478,7 @@ QCD.components.elements.Grid = function (element, mainController) {
         if (!gridParameters.paging) {
             currentGridHeight += 35;
         }
-        if (this.options.footerRow) {
+        if(this.options.footerRow){
             currentGridHeight -= 44;
         }
         grid.setGridHeight(currentGridHeight);
@@ -1489,10 +1489,10 @@ QCD.components.elements.Grid = function (element, mainController) {
         if ((componentEnabled || gridParameters.selectableWhenDisabled) && !gridParameters.suppressSelectEvent && gridParameters.listeners.length > 0) {
             mainController.callEvent("select", elementPath, null);
         } else {
-            if (gridParameters.footerrow) {
+            if(gridParameters.footerrow) {
                 addSummaryDataForNumberRows();
                 addSummaryDataForNumberTimeRows();
-            }
+             }
         }
     }
 
@@ -1538,11 +1538,11 @@ QCD.components.elements.Grid = function (element, mainController) {
 
     function restoreSavedOptions() {
         var savedOptions = getSavedOptions();
-        if (savedOptions.filters) {
+        if (savedOptions.filters){
             currentState.filters = savedOptions.filters;
         }
         if (savedOptions.sorters) {
-            if (!jQuery.isEmptyObject(savedOptions.sorters)) {
+            if(!jQuery.isEmptyObject(savedOptions.sorters)) {
                 currentState.order = savedOptions.sorters;
             }
         }
@@ -1653,8 +1653,8 @@ QCD.components.elements.Grid = function (element, mainController) {
             }
         } else {
             mainController.showMessage({
-                type: "error",
-                content: translations.noRowSelectedError
+                type : "error",
+                content : translations.noRowSelectedError
             });
         }
     }
@@ -1662,7 +1662,6 @@ QCD.components.elements.Grid = function (element, mainController) {
     this.performDelete = function (actionsPerformer) {
         performOnSelectedEntities("remove", actionsPerformer, translations.confirmDeleteMessage + " (" + getSelectedRowsCount() + ")?");
     };
-
     // SOFT DELETE
     this.performSoftDelete = function (actionsPerformer) {
         performOnSelectedEntities("softDelete", actionsPerformer, translations.confirmDeleteMessage + " (" + getSelectedRowsCount() + ")?");
@@ -1697,8 +1696,8 @@ QCD.components.elements.Grid = function (element, mainController) {
             mainController.generateReportForEntity(actionsPerformer, arg1, args, selectedItems);
         } else {
             mainController.showMessage({
-                type: "error",
-                content: translations.noRowSelectedError
+                type : "error",
+                content : translations.noRowSelectedError
             });
         }
     };
@@ -1707,9 +1706,9 @@ QCD.components.elements.Grid = function (element, mainController) {
         var eventObj = null;
         if (typeof eventNameOrObj === 'string') {
             eventObj = {
-                name: eventNameOrObj,
-                args: args,
-                type: type
+                name : eventNameOrObj,
+                args : args,
+                type : type
             };
         } else if (typeof eventNameOrObj === 'object') {
             eventObj = eventNameOrObj;
@@ -1759,12 +1758,12 @@ QCD.components.elements.Grid = function (element, mainController) {
             }
         } else {
             mainController.showMessage({
-                type: "error",
-                content: translations.noRowSelectedError
+                type : "error",
+                content : translations.noRowSelectedError
             });
         }
     };
-
+    
     function stripTags(value) {
         if (typeof value === 'string') {
             return value.replace(/<[\/]{0,1}[a|span|b|i|u|br][^>]*>/g, '');
@@ -1774,9 +1773,9 @@ QCD.components.elements.Grid = function (element, mainController) {
 
     this.getLookupData = function (entityId) {
         return {
-            entityId: entityId,
-            lookupValue: hiddenColumnValues.lookupValue[entityId],
-            lookupCode: stripTags(grid.getRowData(entityId).lookupCode)
+            entityId : entityId,
+            lookupValue : hiddenColumnValues.lookupValue[entityId],
+            lookupCode : stripTags(grid.getRowData(entityId).lookupCode)
         };
     };
 
@@ -1857,13 +1856,13 @@ QCD.components.elements.Grid = function (element, mainController) {
         element.width("100%");
 
         grid.jqGrid('filterToolbar', {
-            stringResult: true
+            stringResult : true
         });
 
         if (gridParameters.isLookup || gridParameters.filtersDefaultEnabled) {
             headerController.setFilterActive();
             currentState.filtersEnabled = true;
-            setTimeout(function () {
+            setTimeout(function(){
                 getColumnFilterElement(options.columns[0].name).focus();
             }, 0);
         } else {
@@ -1880,15 +1879,15 @@ QCD.components.elements.Grid = function (element, mainController) {
         noRecordsDiv = $("<div>").html(translations.noResults).addClass("noRecordsBox");
         noRecordsDiv.hide();
         $("#" + gridParameters.element).parent().append(noRecordsDiv);
-        if (gridParameters.footerrow) {
-            grid.jqGrid('footerData', 'set', { cb: 'Σ' });
+        if(gridParameters.footerrow){
+            grid.jqGrid('footerData', 'set', { cb: 'Σ'});
             $('#' + elementSearchName + ' .ui-jqgrid-ftable').find('tbody').append($('#' + elementSearchName + ' .ui-jqgrid-ftable').find('tr').clone(true));
         }
     }
 
 
-    this.getGrid = function () {
-        return grid;
+    this.getGrid= function () {
+              return grid;
     };
 
     constructor();

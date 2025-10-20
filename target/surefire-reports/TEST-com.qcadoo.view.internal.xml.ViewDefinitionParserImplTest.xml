@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.151" tests="11" errors="0" skipped="0" failures="0">
+<testsuite name="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.155" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin"/>
@@ -64,15 +64,15 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldShouldThrowExceptionIfCustomAuthorizationRoleCannotBeFound" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.028"/>
-  <testcase name="shouldParseXml" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.034"/>
-  <testcase name="shouldMarkComponentAsEnabled" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.01"/>
-  <testcase name="shouldSetListeners" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.012"/>
-  <testcase name="shouldSetCustomAuthorizationRole" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.004"/>
-  <testcase name="shouldMarkComponentAsNotEnabled" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.009"/>
-  <testcase name="shouldSetFields" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.011"/>
-  <testcase name="shouldSetHooks" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.012"/>
-  <testcase name="shouldHasRibbon" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.014"/>
-  <testcase name="shouldMarkComponentAsPermanentlyDisabled" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.008"/>
-  <testcase name="shouldSetViewDefinitionAttributes" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.009"/>
+  <testcase name="shouldShouldThrowExceptionIfCustomAuthorizationRoleCannotBeFound" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.021"/>
+  <testcase name="shouldHasRibbon" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.027"/>
+  <testcase name="shouldSetHooks" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.008"/>
+  <testcase name="shouldParseXml" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.026"/>
+  <testcase name="shouldSetFields" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.014"/>
+  <testcase name="shouldSetListeners" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.009"/>
+  <testcase name="shouldMarkComponentAsNotEnabled" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.011"/>
+  <testcase name="shouldSetCustomAuthorizationRole" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.005"/>
+  <testcase name="shouldMarkComponentAsEnabled" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.011"/>
+  <testcase name="shouldMarkComponentAsPermanentlyDisabled" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.01"/>
+  <testcase name="shouldSetViewDefinitionAttributes" classname="com.qcadoo.view.internal.xml.ViewDefinitionParserImplTest" time="0.013"/>
 </testsuite>
