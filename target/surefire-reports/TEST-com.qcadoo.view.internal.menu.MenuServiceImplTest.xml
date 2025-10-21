@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.674" tests="13" errors="0" skipped="0" failures="0">
+<testsuite name="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.726" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin"/>
@@ -64,17 +64,17 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldUpdateItemIfExists" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.537"/>
-  <testcase name="shouldCreateCategory" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.02"/>
-  <testcase name="shouldReturnEmptyMenu" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.015"/>
-  <testcase name="shouldCreateViewForViewItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.005"/>
-  <testcase name="shouldCreateDeactivatedItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.01"/>
-  <testcase name="shouldCreateViewForUrlItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.01"/>
-  <testcase name="shouldRemoveCategory" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.01"/>
+  <testcase name="shouldCreateItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.573"/>
+  <testcase name="shouldCreateDeactivatedItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.014"/>
+  <testcase name="shouldCreateViewForViewItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.006"/>
+  <testcase name="shouldReturnEmptyMenu" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.02"/>
+  <testcase name="shouldCreateCategory" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.009"/>
+  <testcase name="shouldRemoveCategory" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0"/>
+  <testcase name="shouldUpdateItemIfExists" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.014"/>
+  <testcase name="shouldCreateViewForUrlItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.013"/>
+  <testcase name="shouldReturnMenu" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.042"/>
   <testcase name="shouldNotRemoveCategoryIfHasAnyItems" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.008"/>
-  <testcase name="shouldDoNothingIfItemExistsAndHasTheSameView" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.01"/>
-  <testcase name="shouldDoNothingIfCategoryAlreadyExists" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.01"/>
-  <testcase name="shouldAddViewThrowsAnExceptionIfViewDoesNotExistAndUrlIsNull" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.006"/>
-  <testcase name="shouldReturnMenu" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.026"/>
-  <testcase name="shouldCreateItem" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.007"/>
+  <testcase name="shouldDoNothingIfCategoryAlreadyExists" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.007"/>
+  <testcase name="shouldDoNothingIfItemExistsAndHasTheSameView" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.011"/>
+  <testcase name="shouldAddViewThrowsAnExceptionIfViewDoesNotExistAndUrlIsNull" classname="com.qcadoo.view.internal.menu.MenuServiceImplTest" time="0.009"/>
 </testsuite>

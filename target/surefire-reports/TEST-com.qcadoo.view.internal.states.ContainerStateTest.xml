@@ -64,10 +64,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldHaveChildren" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0.005"/>
-  <testcase name="shouldReturnChildByName" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0"/>
+  <testcase name="shouldReturnChildByName" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0.002"/>
+  <testcase name="shouldHaveChildren" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0.002"/>
   <testcase name="shouldReturnNullIfChildNotExist" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0"/>
+  <testcase name="shouldInitializeChildren" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0.002"/>
+  <testcase name="shouldRenderChildren" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0.001"/>
   <testcase name="shouldHaveNoChildren" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0"/>
-  <testcase name="shouldRenderChildren" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0.002"/>
-  <testcase name="shouldInitializeChildren" classname="com.qcadoo.view.internal.states.ContainerStateTest" time="0"/>
 </testsuite>

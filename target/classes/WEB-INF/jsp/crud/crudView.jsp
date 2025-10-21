@@ -36,98 +36,98 @@
 
 	<c:choose>
 		<c:when test="${useCompressedStaticResources}">
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/qcadoo-min.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/custom.css?ver=2025_10_21_10_48" type="text/css" />
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-1.8.3.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-ui-1.11.4.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.jqGrid.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.searchFilter.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.shorten.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.maskedinput-1.3.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/base64.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/qcadoo-min.js?ver=2025_10_21_10_48"></script>
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/qcadoo-min.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/custom.css?ver=2025_10_21_13_47" type="text/css" />
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-1.8.3.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-ui-1.11.4.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.jqGrid.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.searchFilter.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.shorten.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.maskedinput-1.3.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/base64.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/qcadoo-min.js?ver=2025_10_21_13_47"></script>
 		</c:when>
 		<c:otherwise>
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/_jquery-ui-1.8.5.custom.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/jquery.datepick.css?ver=2025_10_21_10_48" type="text/css" /> 
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/ui.jqgrid.css?ver=2025_10_21_10_48" type="text/css" /> 
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/jstree/style.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/qcd.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/menu/style.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/notification.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/lib/jquery.bubblepopup.v2.3.1.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/window.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/grid.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/form.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/layout.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/tree.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/elementHeader.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/awesomeDynamicList.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/gantt.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/contextualHelpButton.css?ver=2025_10_21_10_48" type="text/css" />
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/custom.css?ver=2025_10_21_10_48" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/_jquery-ui-1.8.5.custom.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/jquery.datepick.css?ver=2025_10_21_13_47" type="text/css" /> 
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/ui.jqgrid.css?ver=2025_10_21_13_47" type="text/css" /> 
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/jstree/style.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/qcd.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/menu/style.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/notification.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/lib/jquery.bubblepopup.v2.3.1.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/window.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/grid.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/form.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/layout.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/tree.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/elementHeader.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/awesomeDynamicList.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/gantt.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/crud/components/contextualHelpButton.css?ver=2025_10_21_13_47" type="text/css" />
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/custom.css?ver=2025_10_21_13_47" type="text/css" />
 			
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-1.8.3.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/json_sans_eval.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/json2.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.blockUI.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.jqGrid.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.searchFilter.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.jstree.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.cookie.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-ui-1.11.4.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-ui-i18n.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.pnotify.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.form.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.maskedinput-1.3.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/encoder.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.shorten.min.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/logger.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/serializator.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/connector.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/multiUpload.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/options.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/pageConstructor.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/modal.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/core/messagesController.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/core/pageController.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/core/actionEvaluator.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/core/tabController.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/component.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/container.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/layout/layout.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/window.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/windowTab.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/form.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/contextualHelpButton.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/utils/elementHeaderUtils.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/utils/loadingIndicator.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/formComponent.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/grid.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/grid/gridHeader.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/textInput.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/timeInput.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/hiddenInput.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/file.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/textArea.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/passwordInput.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/dynamicComboBox.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/entityComboBox.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/lookup.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/lookup/lookupDropdown.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/checkBox.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/linkButton.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/tree.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/calendar.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/staticComponent.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/awesomeDynamicList.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/ribbon.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/gantt/ganttChart.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/gantt/ganttChartHeader.js?ver=2025_10_21_10_48"></script>
-			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/inputWithAction.js?ver=2025_10_21_10_48"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-1.8.3.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/json_sans_eval.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/json2.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.blockUI.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.jqGrid.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.searchFilter.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.jstree.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.cookie.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-ui-1.11.4.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-ui-i18n.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.pnotify.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.form.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.maskedinput-1.3.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/encoder.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.shorten.min.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/logger.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/serializator.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/connector.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/multiUpload.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/options.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/pageConstructor.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/modal.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/core/messagesController.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/core/pageController.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/core/actionEvaluator.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/core/tabController.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/component.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/container.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/layout/layout.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/window.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/windowTab.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/containers/form.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/contextualHelpButton.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/utils/elementHeaderUtils.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/utils/loadingIndicator.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/formComponent.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/grid.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/grid/gridHeader.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/textInput.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/timeInput.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/hiddenInput.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/file.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/textArea.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/passwordInput.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/dynamicComboBox.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/entityComboBox.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/lookup.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/lookup/lookupDropdown.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/checkBox.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/linkButton.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/tree.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/calendar.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/staticComponent.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/awesomeDynamicList.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/ribbon.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/gantt/ganttChart.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/gantt/ganttChartHeader.js?ver=2025_10_21_13_47"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/crud/qcd/components/elements/inputWithAction.js?ver=2025_10_21_13_47"></script>
 
-            <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.scannerdetection.js?ver=2025_10_21_10_48"></script>
-            <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/base64.min.js?ver=2025_10_21_10_48"></script>
+            <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery.scannerdetection.js?ver=2025_10_21_13_47"></script>
+            <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/qcd/utils/base64.min.js?ver=2025_10_21_13_47"></script>
 
 			<c:forEach items="${model['jsFilePaths']}" var="jsFilePath">
 				<c:if test="${jsFilePath != null }">

@@ -31,8 +31,8 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href="css/login.css?ver=2025_10_21_10_48" type="text/css" />
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/custom.css?ver=2025_10_21_10_48" type="text/css" />
+        <link rel="stylesheet" href="css/login.css?ver=2025_10_21_13_47" type="text/css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/custom.css?ver=2025_10_21_13_47" type="text/css" />
     </head>
 
     <body>

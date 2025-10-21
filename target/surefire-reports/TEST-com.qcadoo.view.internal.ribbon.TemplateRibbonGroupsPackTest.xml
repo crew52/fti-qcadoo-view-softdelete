@@ -64,8 +64,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldGetGroupsAlwaysReturnTheSameInstancesOfItems" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0.008"/>
-  <testcase name="shouldGetUpdateReturnNullIfUpdateGroupsListIsEmpty" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0.001"/>
-  <testcase name="shouldGetGroupsUpdatedByTemplate" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0.002"/>
-  <testcase name="shouldNotCallTemplateFromUpdateInfoPack" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0.004"/>
+  <testcase name="shouldNotCallTemplateFromUpdateInfoPack" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0.01"/>
+  <testcase name="shouldGetGroupsAlwaysReturnTheSameInstancesOfItems" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0.005"/>
+  <testcase name="shouldGetUpdateReturnNullIfUpdateGroupsListIsEmpty" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0"/>
+  <testcase name="shouldGetGroupsUpdatedByTemplate" classname="com.qcadoo.view.internal.ribbon.TemplateRibbonGroupsPackTest" time="0"/>
 </testsuite>

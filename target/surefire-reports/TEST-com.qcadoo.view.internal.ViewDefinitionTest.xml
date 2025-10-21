@@ -66,10 +66,10 @@
   </properties>
   <testcase name="shouldReturnNullWhenPatternNotExists" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0"/>
   <testcase name="shouldThrowCyclicDependencyOnInitialize" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0"/>
-  <testcase name="shouldReturnPattern" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0"/>
-  <testcase name="shouldReturnJsFilePaths" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0.002"/>
-  <testcase name="shouldCallInitializeOnChildren" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0"/>
+  <testcase name="shouldCallEvent" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0.008"/>
+  <testcase name="shouldCallHooks" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0.005"/>
   <testcase name="shouldHaveBasicInformation" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0"/>
-  <testcase name="shouldCallHooks" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0.007"/>
-  <testcase name="shouldCallEvent" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0.006"/>
+  <testcase name="shouldReturnPattern" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0.001"/>
+  <testcase name="shouldCallInitializeOnChildren" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0.001"/>
+  <testcase name="shouldReturnJsFilePaths" classname="com.qcadoo.view.internal.ViewDefinitionTest" time="0"/>
 </testsuite>
