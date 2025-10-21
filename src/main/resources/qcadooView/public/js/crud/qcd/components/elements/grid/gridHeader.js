@@ -34,6 +34,8 @@ QCD.components.elements.grid.GridHeaderController = function (_gridController, _
     var translations = _translations;
 
     var deleteButtonEnabled = true;
+    // SOFT DELETE
+    var softDeleteButtonEnabled = true;
 
     var cookieExpires = 30 * 12 * 2;
 
@@ -54,6 +56,8 @@ QCD.components.elements.grid.GridHeaderController = function (_gridController, _
     headerElements.newButton = null;
     headerElements.addExistingButton = null;
     headerElements.deleteButton = null;
+    // SOFT DELETE
+    headerElements.softDeleteButton = null;
     headerElements.upButton = null;
     headerElements.downButton = null;
 
@@ -250,19 +254,19 @@ QCD.components.elements.grid.GridHeaderController = function (_gridController, _
             headerElement.append(headerElements.deleteButton);
             setEnabledButton(headerElements.deleteButton, false);
         }
-            // SOFT DELETE
+        // SOFT DELETE BUTTON (separate)
         if (gridParameters.canSoftDelete) {
             headerElements.softDeleteButton = QCD.components.elements.utils.HeaderUtils.createHeaderButton(
-                translations.softDeleteButton, // tên hiển thị
+                translations.deleteButton, // fallback if missing translation
                 function (e) {
                     if (headerElements.softDeleteButton.hasClass("headerButtonEnabled")) {
                         gridController.onSoftDeleteButtonClicked();
                     }
                 },
-                "deleteIcon16_dis.png" // icon nếu muốn
+                "deleteIcon16_dis.png" // custom icon name (add file if needed)
             );
             headerElement.append(headerElements.softDeleteButton);
-            setEnabledButton(headerElements.softDeleteButton, false); // mặc định disable
+            setEnabledButton(headerElements.softDeleteButton, false);
         }
 
         if (gridParameters.hasPredefinedFilters) {
@@ -553,6 +557,11 @@ QCD.components.elements.grid.GridHeaderController = function (_gridController, _
         deleteButtonEnabled = enabled;
         refreshButtons();
     }
+    // SOFT DELETE
+    this.setSoftDeleteEnabled = function (enabled) {
+        softDeleteButtonEnabled = enabled;
+        refreshButtons();
+    }
 
     this.onSelectionChange = function (_multiselectMode, _selectedRowIndex) {
         multiselectMode = _multiselectMode;
@@ -573,6 +582,10 @@ QCD.components.elements.grid.GridHeaderController = function (_gridController, _
             }
             if (headerElements.deleteButton != null) {
                 setEnabledButton(headerElements.deleteButton, false);
+            }
+            // SOFT DELETE
+            if (headerElements.softDeleteButton != null) {
+                setEnabledButton(headerElements.softDeleteButton, false);
             }
             if (headerElements.upButton != null) {
                 setEnabledButton(headerElements.upButton, false);
@@ -598,6 +611,14 @@ QCD.components.elements.grid.GridHeaderController = function (_gridController, _
                     setEnabledButton(headerElements.deleteButton, true);
                 } else {
                     setEnabledButton(headerElements.deleteButton, false);
+                }
+            }
+            // SOFT DELETE
+            if (headerElements.softDeleteButton != null) {
+                if ((multiselectMode || rowIndex != null) && softDeleteButtonEnabled) {
+                    setEnabledButton(headerElements.softDeleteButton, true);
+                } else {
+                    setEnabledButton(headerElements.softDeleteButton, false);
                 }
             }
             if (headerElements.upButton != null) {
