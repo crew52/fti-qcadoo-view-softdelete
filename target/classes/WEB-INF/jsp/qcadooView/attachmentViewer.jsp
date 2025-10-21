@@ -35,10 +35,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/lib/imageviewer.css?ver=2025_10_20_11_23" type="text/css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/qcadooView/public/css/core/lib/imageviewer.css?ver=2025_10_21_10_48" type="text/css" />
 
-        <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-1.8.3.min.js?ver=2025_10_20_11_23"></script>
-        <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/imageviewer.min.js?ver=2025_10_20_11_23"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/jquery-1.8.3.min.js?ver=2025_10_21_10_48"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/qcadooView/public/js/core/lib/imageviewer.min.js?ver=2025_10_21_10_48"></script>
 
         <link href="${pageContext.request.contextPath}/qcadooView/public/img/core/icons/favicon.png" rel="shortcut icon" />
 

@@ -305,6 +305,8 @@ QCD.components.elements.Grid = function (element, mainController) {
         gridParameters.listeners = options.listeners;
         gridParameters.canNew = options.creatable;
         gridParameters.canDelete = options.deletable;
+        // SOFT DELETE
+        gridParameters.canSoftDelete = options.softDeletable || options.softDeleteEnabled;
         gridParameters.paging = options.paginable;
         gridParameters.activable = options.activable;
         gridParameters.lookup = options.lookup;

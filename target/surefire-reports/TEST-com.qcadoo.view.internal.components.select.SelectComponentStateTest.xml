@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.296" tests="7" errors="0" skipped="0" failures="0">
+<testsuite name="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.248" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin"/>
@@ -64,11 +64,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldAddDeactivatedValueAtTheBeginning" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.27"/>
-  <testcase name="shouldAddDeactivatedValueInTheMiddle" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0"/>
-  <testcase name="shouldAddDeactivatedValueToTheEnd" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.002"/>
-  <testcase name="shouldNotAddAnotherValue" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.004"/>
-  <testcase name="shouldLoadValuesFromOption" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.011"/>
-  <testcase name="shouldNotLoadValuesFromOption" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.003"/>
-  <testcase name="shouldLoadValuesFromOptionAlsoIfOptionValueHasWhiteChars" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.006"/>
+  <testcase name="shouldLoadValuesFromOption" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.23"/>
+  <testcase name="shouldNotLoadValuesFromOption" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0"/>
+  <testcase name="shouldNotAddAnotherValue" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.008"/>
+  <testcase name="shouldAddDeactivatedValueAtTheBeginning" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.002"/>
+  <testcase name="shouldAddDeactivatedValueInTheMiddle" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.001"/>
+  <testcase name="shouldAddDeactivatedValueToTheEnd" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.003"/>
+  <testcase name="shouldLoadValuesFromOptionAlsoIfOptionValueHasWhiteChars" classname="com.qcadoo.view.internal.components.select.SelectComponentStateTest" time="0.004"/>
 </testsuite>

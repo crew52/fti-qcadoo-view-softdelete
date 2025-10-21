@@ -109,6 +109,8 @@ public class GridComponentPattern extends AbstractComponentPattern {
     private boolean paginable = true;
 
     private boolean deletable = false;
+    // SOFT DELETE
+    private boolean softDeletable = false;
 
     private boolean selectableWhenDisabled = false;
 
@@ -153,6 +155,8 @@ public class GridComponentPattern extends AbstractComponentPattern {
     private SecurityRole authorizationRole;
 
     private String deletableAuthorizationRole = "";
+    // SOFT DELETE
+    private String softDeletableAuthorizationRole = "";
 
     private String linkAuthorizationRole = "";
 
@@ -239,6 +243,8 @@ public class GridComponentPattern extends AbstractComponentPattern {
 
         json.put("paginable", paginable);
         json.put("deletable", deletable);
+        // SOFT DELETE
+        json.put("softDeletable", softDeletable);
         json.put("selectableWhenDisabled", selectableWhenDisabled);
         json.put("creatable", creatable);
         json.put("multiselect", multiselect);
@@ -620,11 +626,20 @@ public class GridComponentPattern extends AbstractComponentPattern {
                 filtersDefaultVisible = Boolean.parseBoolean(option.getValue());
             } else if ("deletable".equals(option.getType())) {
                 deletable = Boolean.parseBoolean(option.getValue());
-            } else if ("selectableWhenDisabled".equals(option.getType())) {
+            } 
+            // SOFT DELETE
+            else if ("softDeletable".equals(option.getType())) {
+                softDeletable = Boolean.parseBoolean(option.getValue());
+            }else if ("selectableWhenDisabled".equals(option.getType())) {
                 selectableWhenDisabled = Boolean.parseBoolean(option.getValue());
             } else if ("deletableAuthorizationRole".equals(option.getType())) {
                 deletableAuthorizationRole = option.getValue();
-            } else if ("linkAuthorizationRole".equals(option.getType())) {
+            } 
+            // SOFT DELETE
+            else if ("softDeletableAuthorizationRole".equals(option.getType())) {
+                softDeletableAuthorizationRole = option.getValue();
+            }
+            else if ("linkAuthorizationRole".equals(option.getType())) {
                 linkAuthorizationRole = option.getValue();
             } else if ("height".equals(option.getType())) {
                 height = Integer.parseInt(option.getValue());
@@ -851,6 +866,13 @@ public class GridComponentPattern extends AbstractComponentPattern {
 
     public String getDeletableAuthorizationRole() {
         return deletableAuthorizationRole;
+    }
+    // SOFT DELETE
+    public boolean isSoftDeletable() {
+        return softDeletable;
+    }
+    public String getSoftDeletableAuthorizationRole() {
+        return softDeletableAuthorizationRole;
     }
 
     public String getLinkAuthorizationRole() {

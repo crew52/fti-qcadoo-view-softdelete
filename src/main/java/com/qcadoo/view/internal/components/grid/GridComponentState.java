@@ -171,7 +171,7 @@ public final class GridComponentState extends AbstractComponentState implements 
     private final boolean activable;
 
     private boolean deletable = false;
-
+    // SOFT DELETE
     private boolean softDeletable = false;
 
     private final boolean weakRelation;
@@ -187,8 +187,12 @@ public final class GridComponentState extends AbstractComponentState implements 
     private final SecurityRole authorizationRole;
 
     private String deletableAuthorizationRole = "";
+    // SOFT DELETE
+    private String softDeletableAuthorizationRole = "";
 
     private boolean deleteEnabled = false;
+
+    private boolean softDeleteEnabled = false;
 
     private final SecurityRolesService securityRolesService;
 
@@ -235,6 +239,9 @@ public final class GridComponentState extends AbstractComponentState implements 
         this.securityRolesService = pattern.getApplicationContext().getBean(SecurityRolesService.class);
         this.deletable = pattern.isDeletable();
         this.deletableAuthorizationRole = pattern.getDeletableAuthorizationRole();
+        // SOFT DELETE
+        this.softDeletable = pattern.isSoftDeletable();
+        this.softDeletableAuthorizationRole = pattern.getSoftDeletableAuthorizationRole();
         this.autoRefresh = pattern.isAutoRefresh();
         this.footerRow = pattern.isFooterRow();
         this.columnsToSummary = pattern.getColumnsToSummary();
@@ -354,6 +361,12 @@ public final class GridComponentState extends AbstractComponentState implements 
                 && securityRolesService.canAccess(deletableAuthorizationRole)
                 || deletable && StringUtils.isEmpty(deletableAuthorizationRole)) {
             this.deleteEnabled = true;
+        }
+        // SOFT DELETE
+        if (softDeletable && StringUtils.isNotEmpty(softDeletableAuthorizationRole)
+                && securityRolesService.canAccess(softDeletableAuthorizationRole)
+                || softDeletable && StringUtils.isEmpty(softDeletableAuthorizationRole)) {
+            this.softDeleteEnabled = true;
         }
 
         passFiltersFromJson(json);
@@ -581,6 +594,8 @@ public final class GridComponentState extends AbstractComponentState implements 
         }
 
         json.put(JSON_DELETE_ENABLED, this.deleteEnabled);
+        // SOFT DELETE
+        json.put("softDeleteEnabled", this.deleteEnabled);
         json.put(JSON_AUTOMATIC_REFRESH, this.autoRefresh);
 
         return json;
