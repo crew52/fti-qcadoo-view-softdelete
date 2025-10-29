@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.qcadoo.view.internal.states.components.GridComponentStateTest
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 sec - in com.qcadoo.view.internal.states.components.GridComponentStateTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 sec - in com.qcadoo.view.internal.states.components.GridComponentStateTest

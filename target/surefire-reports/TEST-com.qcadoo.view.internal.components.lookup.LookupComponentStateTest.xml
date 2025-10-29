@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.106" tests="9" errors="0" skipped="0" failures="0">
+<testsuite name="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.044" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin"/>
     <property name="java.vm.version" value="25.191-b12"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\qcadoo_demo\qcadoo\qcadoo-view"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\qcadoo_demo\qcadoo"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\qcadoo_demo\qcadoo\qcadoo-view"/>
+    <property name="user.dir" value="D:\qcadoo_demo\qcadoo"/>
     <property name="java.runtime.version" value="1.8.0_191-b12"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\endorsed"/>
@@ -28,7 +28,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="D:\apache-maven-3.6.0\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\dungn\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Google\Chrome\Application;C:\WINDOWS\system32;D:\apache-maven-3.6.0\bin;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\dungn\AppData\Local\Microsoft\WindowsApps;C:\Users\dungn\AppData\Local\GitHubDesktop\bin;C:\Users\dungn\AppData\Roaming\npm;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.292-2\bin;C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.292-2\jre\bin;D:\apache-maven-3.6.0\bin;C:\Users\dungn\AppData\Local\Microsoft\WindowsApps;C:\Users\dungn\AppData\Local\GitHubDesktop\bin;C:\Users\dungn\AppData\Local\Programs\Microsoft VS Code\bin;c:\Users\dungn\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\dungn\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Google\Chrome\Application;C:\WINDOWS\system32;D:\apache-maven-3.6.0\bin;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\dungn\AppData\Local\Microsoft\WindowsApps;C:\Users\dungn\AppData\Local\GitHubDesktop\bin;C:\Users\dungn\AppData\Roaming\npm;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.292-2\bin;C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.292-2\jre\bin;D:\apache-maven-3.6.0\bin;C:\Program Files\Git\cmd;C:\Users\dungn\AppData\Local\Microsoft\WindowsApps;C:\Users\dungn\AppData\Local\Programs\Microsoft VS Code\bin;c:\Users\dungn\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;."/>
     <property name="maven.conf" value="D:\apache-maven-3.6.0\bin\../conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -64,13 +64,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldReturnNullWhenValueIsNull" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.065"/>
+  <testcase name="shouldIsEmptyReturnFalseForLongValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.035"/>
+  <testcase name="shouldIsEmptyReturnTrueForEmptyStringValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.005"/>
+  <testcase name="shouldReturnNullWhenValueIsIncorrect" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.003"/>
+  <testcase name="shouldIsEmptyReturnTrueForNullValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.001"/>
+  <testcase name="shouldIsEmptyReturnFalseForNumberStringValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0"/>
+  <testcase name="shouldReturnNullWhenEntityDoesnotExistsInDB" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0"/>
+  <testcase name="shouldReturnNullWhenValueIsNull" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0"/>
   <testcase name="shouldReturnEntity" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0"/>
   <testcase name="shouldReturnEntityWhenIdIsString" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0"/>
-  <testcase name="shouldIsEmptyReturnFalseForNumberStringValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.007"/>
-  <testcase name="shouldIsEmptyReturnTrueForEmptyStringValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.009"/>
-  <testcase name="shouldIsEmptyReturnFalseForLongValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.003"/>
-  <testcase name="shouldReturnNullWhenValueIsIncorrect" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.002"/>
-  <testcase name="shouldReturnNullWhenEntityDoesnotExistsInDB" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.006"/>
-  <testcase name="shouldIsEmptyReturnTrueForNullValue" classname="com.qcadoo.view.internal.components.lookup.LookupComponentStateTest" time="0.014"/>
 </testsuite>

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.qcadoo.view.crud.CrudControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.qcadoo.view.crud.CrudControllerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in com.qcadoo.view.crud.CrudControllerTest
